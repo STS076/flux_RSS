@@ -1,13 +1,18 @@
-<?php session_start() ?>
+<?php session_start();
+
+?>
 <?php include '../elements/top.php' ?>
 
 <body>
     <?php include '../elements/header.php' ?>
+
     <div class="container bg-light">
         <div class="row justify-content-center">
 
+
+            <!-- flux RSS hiver -->
             <?php
-            $fluxRSS = "https://rmcsport.bfmtv.com/rss/cyclisme/tour-de-france/";
+            $fluxRSS = "https://rmcsport.bfmtv.com/rss/sports-extremes/";
             function recupXML($url)
             {
                 if (!@$rss = simplexml_load_file($url)) {
@@ -18,57 +23,244 @@
             }
 
             try {
-                $rss = recupXML($fluxRSS);
 
-                $sports = $rss->channel->item;
+                $rss = recupXML($fluxRSS);
+                $extreme = $rss->channel->item;
             } catch (Exception $e) {
                 echo $e->getMessage();
             }
             ?>
-            <?php if (isset($sports)) {
+
+            <!-- flex rss extreme -->
+            <?php
+            $fluxRSS2 = "https://rmcsport.bfmtv.com/rss/sports-d-hiver/";
+            function recupXML2($url)
+            {
+                if (!@$rss2 = simplexml_load_file($url)) {
+                    throw new Exception('Flux introuvable');
+                } else {
+                    return $rss2;
+                }
+            }
+
+            try {
+
+                $rss2 = recupXML2($fluxRSS2);
+                $hiver = $rss2->channel->item;
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
+            ?>
+
+            <!-- flex rss jeux olympiques -->
+            <?php
+            $fluxRSS3 = "https://rmcsport.bfmtv.com/rss/jeux-olympiques/";
+            function recupXML3($url)
+            {
+                if (!@$rss3 = simplexml_load_file($url)) {
+                    throw new Exception('Flux introuvable');
+                } else {
+                    return $rss3;
+                }
+            }
+
+            try {
+
+                $rss3 = recupXML3($fluxRSS3);
+                $olympics = $rss3->channel->item;
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
+            ?>
+            <!-- fetch flux rss -->
+
+            <!-- caroussel -->
+            <div id="carouselExampleCaptions" class="carousel slide p-5" data-bs-ride="false">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="<?= $hiver->enclosure['url'] ?>" class="d-block w-100" alt="image couverture hiver">
+                        <div class="carousel-caption d-none d-md-block">
+                            <a href="<?= $hiver->link ?>" class="text-decoration-none text-white blanc fs-4">
+                                <p class="card-title blanc"><?= $hiver->title ?> ...voir plus</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="<?= $extreme->enclosure['url'] ?>" class="d-block w-100" alt="image couverture extreme">
+                        <div class="carousel-caption d-none d-md-block">
+                            <a href="<?= $extreme->link ?>" class="text-decoration-none text-dark  blanc fs-4">
+                                <p class="card-title blanc"><?= $extreme->title ?> ...voir plus</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="<?= $olympics->enclosure['url'] ?>" class="d-block w-100" alt="image couverture olympiques">
+                        <div class="carousel-caption d-none d-md-block">
+                            <a href="<?= $olympics->link ?>" class="text-decoration-none text-dark blanc fs-4">
+                                <p class="card-title blanc"><?= $olympics->title ?> ...voir plus</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- caroussel -->
+
+            <?php if (isset($hiver)) {
                 setlocale(LC_TIME, "fr_FR", "fra");
                 $date_format = '%A %d %B %Y';
 
-                foreach ($sports as $value) { ?>
-
+                for ($index = 0; $index < 4; $index++) { ?>
                     <div class="card col-lg-4 col-11 p-0 m-5">
-                        <img src="<?= $value->enclosure['url'] ?>" alt="image couverture" class="image">
+                        <img src="<?= $hiver[$index]->enclosure['url'] ?>" alt="image couverture" class="image">
                         <div class="card-body">
-                            <p class="card-title"><?= $value->title ?></p>
-                            <p><?= strftime($date_format, strtotime($value->pubDate)) ?></p>
-                            <div class="d-flex justify-content-evenly">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#<?= $value->enclosure['url'] ?>">
-                                    Launch demo modal
-                                </button>
-                                <a href="<?= $value->link ?>" class="btn btn-secondary">Article</a>
+                            <a href="<?= $hiver[$index]->link ?>" class="text-decoration-none text-dark">
+                                <p class="card-title"><?= $hiver[$index]->title ?> ...voir plus</p>
+                            </a>
+                            <p><?= strftime($date_format, strtotime($hiver[$index]->pubDate)) ?></p>
+
+
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal<?= $index ?>">
+                                info 1
+                            </button>
+
+                        </div>
+                    </div>
+                    <!-- modale -->
+                    <div class="modal fade" id="modal<?= $index ?>" tabindex="-1">
+                        <div class=" modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="modal-title">Modal title
+                                    <p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="card-title"><?= $hiver[$index]->title ?></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- modale -->
 
                 <?php } ?>
             <?php } ?>
+            <!-- fin boucle hiver -->
 
-        </div>
-    </div>
 
-    <div class="modal fade" id="<?= $value->enclosure['url'] ?>" tabindex="-1" ">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <p class="modal-title" id="<?= $value->title ?>">Modal title
-                    <p>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>s
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
+            <?php if (isset($extreme)) {
+                setlocale(LC_TIME, "fr_FR", "fra");
+                $date_format = '%A %d %B %Y';
+                $id = 1;
+                for ($index = 0; $index < 4; $index++) { ?>
+                    <div class="card col-lg-4 col-11 p-0 m-5">
+                        <img src="<?= $extreme[$index]->enclosure['url'] ?>" alt="image couverture" class="image">
+                        <div class="card-body">
+                            <a href="<?= $extreme[$index]->link ?>" class="text-decoration-none text-dark">
+                                <p class="card-title"><?= $extreme[$index]->title ?></p>
+                            </a>
+                            <p><?= strftime($date_format, strtotime($extreme[$index]->pubDate)) ?></p>
+
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal<?= $index ?>">
+                                info 2
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <!-- modale -->
+                    <div class="modal fade" id="modal<?= $index ?>" tabindex="-1">
+                        <div class=" modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="modal-title">Modal title
+                                    <p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="card-title"><?= $extreme[$index]->title ?></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modale -->
+
+                <?php } ?>
+            <?php } ?>
+            <!-- fin boucle extrème -->
+
+
+            <?php if (isset($olympics)) {
+                setlocale(LC_TIME, "fr_FR", "fra");
+                $date_format = '%A %d %B %Y';
+
+                for ($index = 0; $index < 4; $index++) { ?>
+                    <div class="card col-lg-4 col-11 p-0 m-5">
+                        <img src="<?= $olympics[$index]->enclosure['url'] ?>" alt="image couverture" class="image">
+                        <div class="card-body">
+                            <a href="<?= $olympics[$index]->link ?>" class="text-decoration-none text-dark">
+                                <p class="card-title"><?= $olympics[$index]->title ?> ...voir plus</p>
+                            </a>
+                            <p><?= strftime($date_format, strtotime($olympics[$index]->pubDate)) ?></p>
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal<?= $index ?>">
+                                info 1
+                            </button>
+
+                        </div>
+                    </div>
+                    <!-- modale -->
+                    <div class="modal fade" id="modal<?= $index ?>" tabindex="-1">
+                        <div class=" modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="modal-title">Modal title
+                                    <p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="card-title"><?= $hiver[$index]->title ?></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modale -->
+
+                <?php } ?>
+            <?php } ?>
+            <!-- fin boucle hiver -->
         </div>
+        <!-- fin row -->
     </div>
+    <!-- fin container -->
+
+
+
+
+
 
     <?php include '../elements/footer.php' ?>
 

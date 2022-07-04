@@ -42,7 +42,7 @@
     </nav>
 
     <div class="pb-4">
-        <h1 class="text-center  py-4 sophie ">TITRE DE NOTRE SITE</h1>
+        <h1 class="text-center py-4 ">TITRE DE NOTRE SITE</h1>
     </div>
 
     <nav class="navbar navbar-expand-lg shadow-5-strong recherche p-4 mt-4">
