@@ -28,11 +28,8 @@
                     </li>
                     <li class="nav-item ">
                         <a href="inscription.php" class="nav-link  fw-bold  active titre me-5">Abonnez-vous</a>
-
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link  fw-bold  active titre me-5" href="settings.php">Fil sport</a>
-                    </li>
+                  
                     <li class="nav-item">
                         <a class="nav-link  fw-bold  active titre" href="parameters.php" tabindex="-1" aria-disabled="true">paramètres</a>
                     </li>

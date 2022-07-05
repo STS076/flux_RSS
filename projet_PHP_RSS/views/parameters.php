@@ -15,11 +15,6 @@ require_once '../helpers/helpers.php';
 
     <h1 class="text-center mt-4">Paramètres</h1>
 
-    <?php var_dump($_POST) ?>
-
-    <h1>Paramètres</h1>
-
-    <p>Bonjour, <?= $_SESSION['user']['firstname'] ?> <?= $_SESSION['user']['surname'] ?></p>
 
     <p class="text-center">Bonjour <?= $_SESSION['user']['firstname'] ?> <?= $_SESSION['user']['surname'] ?></p>
 
@@ -87,14 +82,8 @@ require_once '../helpers/helpers.php';
 
                     </div>
 
-
-
-
-                    <button class="btn btn-primary">Valider</button>
-
-
                         <div class="d-flex justify-content-center">
-                            <button class="my-4 btn btn-light">Valider</button>
+                            <button class="my-4 btn bouton">Valider</button>
                         </div>
 
 

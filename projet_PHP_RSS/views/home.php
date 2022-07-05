@@ -10,10 +10,8 @@ if (!isset($_POST)) {
 
 <body>
     <?php include '../elements/header.php' ?>
-
     <!-- <div class="container"> -->
     <div class="row justify-content-center m-0 p-0">
-
         <!-- flux RSS hiver -->
         <?php
         $fluxRSS = [
@@ -23,7 +21,6 @@ if (!isset($_POST)) {
             'https://rmcsport.bfmtv.com/rss/jeux-olympiques/',
             'https://rmcsport.bfmtv.com/rss/voile/'
         ];
-
         function recupXML($url)
         {
             if (!@$rss = simplexml_load_file($url)) {
@@ -32,7 +29,6 @@ if (!isset($_POST)) {
                 return $rss;
             }
         }
-
         $array = [];
         foreach ($fluxRSS as $value) {
             try {
@@ -43,9 +39,7 @@ if (!isset($_POST)) {
             }
         }
         ?>
-
         <!-- fetch flux rss -->
-
         <!-- caroussel -->
         <div class="col-lg-10 col-12 m-0 p-0">
             <div id="carouselExampleCaptions" class="container carousel slide mt-4" data-bs-ride="false">
@@ -89,145 +83,13 @@ if (!isset($_POST)) {
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            <!-- caroussel -->
-
-
-            <?php
-            if (isset($_COOKIE['myNb'])) {
-                $test = $_COOKIE['myNb'] / 3;
-            } else {
-                $test = 3;
-            }
-
-
-            setlocale(LC_TIME, "fr_FR", "fra");
-            $date_format = '%A %d %B %Y';
-            for ($index = 1; $index <= $test; $index++) { ?>
-                <div class="card col-lg-4 col-11 p-0 m-4">
-                    <img src="<?= $hiver[$index]->enclosure['url'] ?>" alt="image couverture" class="image">
-                    <div class="card-body">
-                        <a href="<?= $hiver[$index]->link ?>" class="text-decoration-none text-dark">
-                            <p class="card-title"><?= $hiver[$index]->title ?> ...voir plus</p>
-                        </a>
-                        <p><?= strftime($date_format, strtotime($hiver[$index]->pubDate)) ?></p>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal<?= $index ?>">
-                            info 1
-                        </button>
-                    </div>
-                </div>
-                <!-- modale -->
-                <div class="modal fade" id="modal<?= $index ?>" tabindex="-1">
-                    <div class=" modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p class="card-title"><?= $hiver[$index]->title ?></p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- modale -->
-            <?php } ?>
-            <!-- fin boucle hiver -->
-
-
-            <?php
-            setlocale(LC_TIME, "fr_FR", "fra");
-            $date_format = '%A %d %B %Y';
-
-            for ($index2 = 1; $index2 <= $test; $index2++) { ?>
-                <div class="card col-lg-4 col-11 p-0 m-4">
-                    <img src="<?= $extreme[$index2]->enclosure['url'] ?>" alt="image couverture" class="image">
-                    <div class="card-body">
-                        <a href="<?= $extreme[$index2]->link ?>" class="text-decoration-none text-dark">
-                            <p class="card-title"><?= $extreme[$index2]->title ?></p>
-                        </a>
-                        <p><?= strftime($date_format, strtotime($extreme[$index2]->pubDate)) ?></p>
-
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal<?= $index2 ?>">
-                            info 2
-                        </button>
-
-                    </div>
-                </div>
-
-                <!-- modale -->
-                <div class="modal fade" id="modal<?= $index2 ?>" tabindex="-1">
-                    <div class=" modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p class="card-title"><?= $extreme[$index2]->title ?></p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- modale -->
-            <?php } ?>
-            <!-- fin boucle extrème -->
-
-
-            <?php
-            setlocale(LC_TIME, "fr_FR", "fra");
-            $date_format = '%A %d %B %Y';
-
-            for ($index3 = 1; $index3 <= $test; $index3++) { ?>
-                <div class="card col-lg-4 col-11 p-0 m-4">
-                    <img src="<?= $olympics[$index3]->enclosure['url'] ?>" alt="image couverture" class="image">
-                    <div class="card-body">
-                        <a href="<?= $olympics[$index3]->link ?>" class="text-decoration-none text-dark">
-                            <p class="card-title"><?= $olympics[$index3]->title ?> ...voir plus</p>
-                        </a>
-                        <p><?= strftime($date_format, strtotime($olympics[$index3]->pubDate)) ?></p>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal<?= $index3 ?>">
-                            info 3
-                        </button>
-
-                    </div>
-                </div>
-                <!-- modale -->
-                <div class="modal fade" id="modal<?= $index3 ?>" tabindex="-1">
-                    <div class=" modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p class="card-title"><?= $olympics->title ?></p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- modale -->
-            <?php } ?>
-
-            <!-- fin boucle olympiques -->
         </div>
         <!-- caroussel -->
-
-
         <?php
         setlocale(LC_TIME, "fr_FR", "fra");
         $date_format = '%A %d %B %Y';
         for ($index = 1; $index <= 3; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
-
                 <img src="<?= $array[0][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
                 <div class="card-body">
                     <a href="<?= $array[0][$index]->link ?>" class="text-decoration-none text-dark">
@@ -244,16 +106,15 @@ if (!isset($_POST)) {
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header text-center">
-                            <p class=" fw-bold fs-5">Toutes les infos sur les sports d'hiver</p>
+                            <p class=" fw-bold fs-5 text-dark">Toutes les infos sur les sports d'hiver</p>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <p class="card-title text-dark"><?= $hiver[$index]->title ?></p>
+                            <p class="card-title text-dark"><?= $array[0][$index]->title ?></p>
                         </div>
                         <div class="modal-footer d-flex justify-content-between">
-                            <button type="button" class="btn bouton"><a class="text-dark text-decoration-none" href="<?= $hiver[$index]->link ?>">Article</a></button>
+                            <button type="button" class="btn bouton"><a class="text-dark text-decoration-none" href="<?= $array[0][$index]->link ?>">Article</a></button>
                             <button type="button" class="btn bouton" data-bs-dismiss="modal"><i class="bi bi-x-circle"></i></button>
-
                         </div>
                     </div>
                 </div>
@@ -261,12 +122,9 @@ if (!isset($_POST)) {
             <!-- modale -->
         <?php } ?>
         <!-- fin boucle hiver -->
-
-
         <?php
         setlocale(LC_TIME, "fr_FR", "fra");
         $date_format = '%A %d %B %Y';
-
         for ($index = 1; $index <= 3; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $array[1][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
@@ -275,28 +133,25 @@ if (!isset($_POST)) {
                         <p class="card-title"><?= $array[1][$index]->title ?></p>
                     </a>
                     <p class="text-dark"><?= strftime($date_format, strtotime($array[1][$index]->pubDate)) ?></p>
-
                     <button type="button" class="btn bouton" data-bs-toggle="modal" data-bs-target="#modal2<?= $index ?>">
                         <i class="bi text-dark bi-bookmark"></i>
                     </button>
                 </div>
             </div>
-
             <!-- modale -->
-            <div class="modal fade" id="modal2<?= $index2 ?>" tabindex="-1">
+            <div class="modal fade" id="modal2<?= $index ?>" tabindex="-1">
                 <div class=" modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <p class=" fw-bold fs-5">Toutes les infos sur les sports extrêmes</p>
+                            <p class=" fw-bold fs-5 text-dark">Toutes les infos sur les sports extrêmes</p>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <p class="card-title text-dark"><?= $extreme[$index2]->title ?></p>
+                            <p class="card-title text-dark"><?= $array[1][$index]->title ?></p>
                         </div>
                         <div class="modal-footer d-flex justify-content-between">
-                            <button type="button" class="btn bouton"><a class="text-dark text-decoration-none" href="<?= $extreme[$index]->link ?>">Article</a></button>
+                            <button type="button" class="btn bouton"><a class="text-dark text-decoration-none" href="<?= $array[1][$index]->link ?>">Article</a></button>
                             <button type="button" class="btn bouton" data-bs-dismiss="modal"><i class="bi bi-x-circle"></i></button>
-
                         </div>
                     </div>
                 </div>
@@ -304,12 +159,9 @@ if (!isset($_POST)) {
             <!-- modale -->
         <?php } ?>
         <!-- fin boucle extrème -->
-
-
         <?php
         setlocale(LC_TIME, "fr_FR", "fra");
         $date_format = '%A %d %B %Y';
-
         for ($index = 1; $index <= 3; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $array[2][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
@@ -321,44 +173,34 @@ if (!isset($_POST)) {
                     <button type="button" class="btn bouton" data-bs-toggle="modal" data-bs-target="#modal3<?= $index ?>">
                         <i class="bi text-dark bi-bookmark"></i>
                     </button>
-
                 </div>
             </div>
             <!-- modale -->
-            <div class="modal fade" id="modal3<?= $index3 ?>" tabindex="-1">
+            <div class="modal fade" id="modal3<?= $index ?>" tabindex="-1">
                 <div class=" modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <p class=" fw-bold fs-5">Toutes les infos sur les jeux olympiques</p>
+                            <p class=" fw-bold fs-5 text-dark">Toutes les infos sur les jeux olympiques</p>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <p class="card-title text-dark"><?= $olympics->title ?></p>
+                            <p class="card-title text-dark"><?= $array[2][$index]->title ?></p>
                         </div>
                         <div class="modal-footer d-flex justify-content-between">
-                            <button type="button" class="btn bouton"><a class="text-dark text-decoration-none" href="<?= $olympics[$index]->link ?>">Article</a></button>
+                            <button type="button" class="btn bouton"><a class="text-dark text-decoration-none" href="<?= $array[2][$index]->link ?>">Article</a></button>
                             <button type="button" class="btn bouton" data-bs-dismiss="modal"><i class="bi bi-x-circle"></i></button>
-
                         </div>
                     </div>
                 </div>
             </div>
             <!-- modale -->
         <?php } ?>
-
         <!-- fin boucle olympiques -->
     </div>
     <!-- fin row -->
     <!-- </div> -->
     <!-- fin container -->
-
-
-
-
-
-
     <?php include '../elements/footer.php' ?>
-
 </body>
 
 </html>
