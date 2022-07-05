@@ -3,10 +3,10 @@
     <nav class="navbar navbar-expand-lg shadow-5-strong mb-4 pb-4">
         <div class="container-fluid">
             <a class="navbar-brand me-5 pe-5" href="home.php"><img class="coeur" src="../public/img/icone.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupported" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupported">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item ">
                         <a href="home.php" class="nav-link  fw-bold  active titre me-5">Accueil</a>
@@ -42,7 +42,7 @@
     </nav>
 
     <div class="pb-4">
-        <h1 class="text-center  py-4 sophie ">TITRE DE NOTRE SITE</h1>
+        <h1 class="text-center py-4 ">TITRE DE NOTRE SITE</h1>
     </div>
 
     <nav class="navbar navbar-expand-lg shadow-5-strong recherche p-4 mt-4">

@@ -1,5 +1,5 @@
-<footer class="p-3">
-    <div class="text-center mt-auto">
+<footer class="pt-3">
+    <div class="text-center mt-auto bg-light py-3">
         © Mika & Sophie | Mentions légales
     </div>
 </footer>

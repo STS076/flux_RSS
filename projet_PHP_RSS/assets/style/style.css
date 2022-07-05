@@ -10,6 +10,12 @@
     background-color: rgba(255, 255, 255, 0.452);
 }
 
-h1{
-    color: red;
+.image {
+    width: 100%;
+    height: auto;
 }
+
+body {
+    background-color: navy;
+}
+
