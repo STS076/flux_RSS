@@ -11,11 +11,11 @@
 
 
 
-<?php if(isset($_COOKIE['darkMode'])) { ?>
-    <link rel="stylesheet" href="../assets/style/darkMode.css">
-<?php } else { ?>
-<link rel="stylesheet" href="../assets/style/style.css">
- <?php } ?>
+    <?php if (isset($_COOKIE['darkMode'])) { ?>
+        <link rel="stylesheet" href="../assets/style/darkMode.css">
+    <?php } else { ?>
+        <link rel="stylesheet" href="../assets/style/style.css">
+    <?php } ?>
 
 
     <link rel="stylesheet" href="../assets/style/style.css">

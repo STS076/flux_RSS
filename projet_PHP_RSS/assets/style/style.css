@@ -15,7 +15,10 @@
     height: auto;
 }
 
-body {
-    background-color: navy;
+.bouton{
+   background-color: rgb(255, 240, 223); 
 }
 
+.navigation{
+    background-color:rgba(128, 128, 128, 0.735);
+}
