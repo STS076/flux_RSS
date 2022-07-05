@@ -7,7 +7,6 @@ if(!isset($_SESSION['user'])){
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     setcookie("myNb",$_POST['myNb'], time() + 3600);
-    setcookie("choice",$_POST['choice'], time() + 3600);
 
 
 
@@ -19,10 +18,10 @@ if(isset($_POST['darkMode'])){
 }
 
 
-if(!isset($_POST['choice'])){
- 
+if(isset($_POST['choice'])){
+    $choices = implode("-",$_POST['choice']);
+    setcookie('choixSport',$choices, time() +3600);
 }
-
 header('Location: ../views/parameters.php');
 
 }

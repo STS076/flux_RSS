@@ -120,9 +120,16 @@
 
 
             <?php
+            if (isset($_COOKIE['myNb'])) {
+                $test = $_COOKIE['myNb'] / 3;
+            } else {
+                $test = 3;
+            }
+
+
             setlocale(LC_TIME, "fr_FR", "fra");
             $date_format = '%A %d %B %Y';
-            for ($index = 1; $index <= 3; $index++) { ?>
+            for ($index = 1; $index <= $test; $index++) { ?>
                 <div class="card col-lg-4 col-11 p-0 m-4">
                     <img src="<?= $hiver[$index]->enclosure['url'] ?>" alt="image couverture" class="image">
                     <div class="card-body">
@@ -161,7 +168,7 @@
             setlocale(LC_TIME, "fr_FR", "fra");
             $date_format = '%A %d %B %Y';
 
-            for ($index2 = 1; $index2 <= 3; $index2++) { ?>
+            for ($index2 = 1; $index2 <= $test; $index2++) { ?>
                 <div class="card col-lg-4 col-11 p-0 m-4">
                     <img src="<?= $extreme[$index2]->enclosure['url'] ?>" alt="image couverture" class="image">
                     <div class="card-body">
@@ -203,7 +210,7 @@
             setlocale(LC_TIME, "fr_FR", "fra");
             $date_format = '%A %d %B %Y';
 
-            for ($index3 = 1; $index3 <= 3; $index3++) { ?>
+            for ($index3 = 1; $index3 <= $test; $index3++) { ?>
                 <div class="card col-lg-4 col-11 p-0 m-4">
                     <img src="<?= $olympics[$index3]->enclosure['url'] ?>" alt="image couverture" class="image">
                     <div class="card-body">
