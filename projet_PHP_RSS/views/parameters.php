@@ -9,10 +9,11 @@ require_once '../helpers/helpers.php';
 
 <?php include '../elements/top.php' ?>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
     <?php include '../elements/header.php' ?>
 
+    <h1 class="text-center mt-4">Paramètres</h1>
 
     <?php var_dump($_POST) ?>
 
@@ -20,12 +21,14 @@ require_once '../helpers/helpers.php';
 
     <p>Bonjour, <?= $_SESSION['user']['firstname'] ?> <?= $_SESSION['user']['surname'] ?></p>
 
+    <p class="text-center">Bonjour <?= $_SESSION['user']['firstname'] ?> <?= $_SESSION['user']['surname'] ?></p>
 
     <form action="" method="POST" enctype="multipart/form-data">
         <div class="mt-2">
             <fieldset>
-                <div class="row-justify-content-center">
+                <div class="row justify-content-center m-0 p-0">
 
+                    <div class="col-lg-5 col-11">
 
 
                     <div class="form-check form-switch">
@@ -33,6 +36,7 @@ require_once '../helpers/helpers.php';
                         <label class="form-check-label" for="darkMode">Mode dark</label>
                     </div>
 
+                        <p class="text-center mt-3">Nombre d'articles affichés sur la page d'accueil :</p>
 
 
                     <p>Nombre d'articles affichés sur la page d'accueil</p>
@@ -89,11 +93,14 @@ require_once '../helpers/helpers.php';
                     <button class="btn btn-primary">Valider</button>
 
 
+                        <div class="d-flex justify-content-center">
+                            <button class="my-4 btn btn-light">Valider</button>
+                        </div>
 
 
+                    </div>
                 </div>
-        </div>
-        </fieldset>
+            </fieldset>
         </div>
     </form>
 

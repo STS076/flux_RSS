@@ -1,8 +1,8 @@
-<header class="background">
+<header class="background d-lg-block d-none">
 
     <nav class="navbar navbar-expand-lg shadow-5-strong mb-4 pb-4">
         <div class="container-fluid">
-            <a class="navbar-brand me-5 pe-5" href="home.php"><img class="coeur" src="../public/img/icone.png" alt=""></a>
+            <a class="navbar-brand me-5 pe-5" href="home.php">Notre Site</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupported" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,14 +27,14 @@
 
                     </li>
                     <li class="nav-item ">
-                        <a href="" class="nav-link  fw-bold  active titre me-5">Abonnez-vous</a>
+                        <a href="inscription.php" class="nav-link  fw-bold  active titre me-5">Abonnez-vous</a>
 
                     </li>
                     <li class="nav-item">
                         <a class="nav-link  fw-bold  active titre me-5" href="settings.php">Fil sport</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  fw-bold  active titre" href="#" tabindex="-1" aria-disabled="true">paramètres</a>
+                        <a class="nav-link  fw-bold  active titre" href="parameters.php" tabindex="-1" aria-disabled="true">paramètres</a>
                     </li>
                 </ul>
             </div>
@@ -55,19 +55,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Tour de France<i class="bi bi-chevron-down"></i></a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Tour de France</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Jeux Olympiques <i class="bi bi-chevron-down"></i></a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Jeux Olympiques</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Sports extrêmes<i class="bi bi-chevron-down"></i></a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Sports extrêmes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Voile<i class="bi bi-chevron-down"></i></a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Voile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Sports d'hiver<i class="bi bi-chevron-down"></i></a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Sports d'hiver</a>
                     </li>
                 </ul>
 
@@ -75,4 +75,47 @@
         </div>
     </nav>
 
+</header>
+
+<header class="d-lg-none d-block">
+    <nav class="navbar fixed-bottom navbar-expand-lg navigation shadow-5-strong py-2">
+        <div class="container-fluid">
+            <a class="navbar-brand me-5 pe-5" href="home.php"><a class="navbar-brand" href="#">Titre de notre Site</a></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupported" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupported">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item ">
+                        <a href="home.php" class="nav-link  fw-bold  active titre me-5">Accueil</a>
+
+                    </li>
+                    <li class="nav-item">
+
+                        <?php if (isset($_SESSION['user'])) {  ?>
+                            <a class="nav-link fw-bold active titre me-5 " href="logout.php">
+                                Deconnexion
+                            </a>
+                        <?php } else {  ?>
+                            <a class="nav-link fw-bold active titre me-5 " href="login.php">
+                                S'indentifier
+                            </a>
+                        <?php   }
+                        ?>
+
+                    </li>
+                    <li class="nav-item ">
+                        <a href="inscription.php" class="nav-link  fw-bold  active titre me-5">Abonnez-vous</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  fw-bold  active titre me-5" href="settings.php">FAvoris</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  fw-bold  active titre" href="parameters.php" tabindex="-1" aria-disabled="true">paramètres</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>

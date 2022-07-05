@@ -13,7 +13,7 @@ include '../elements/top.php';
 
     <form action="" method="POST">
 
-        <div class="container bienvenue d-flex align-items-center flex-column rounded my-5 p-5 border border-dark shadow">
+        <div class="container col-lg-8  bienvenue d-flex align-items-center flex-column rounded my-5 py-3 border border-dark shadow">
             <div>
                 <span class="fs-4 ms-4 pb-3 text-light">Veuillez rentrer les informations ci-dessous afin de vous connecter : </span>
             </div>
@@ -31,7 +31,7 @@ include '../elements/top.php';
             </div>
 
             <div class="my-3 text-center">
-                <button class="btn bouton" id="submit" name="submit">S'identifier</button>
+                <button class="btn bouton bg-light text-dark" id="submit" name="submit">S'identifier</button>
             </div>
 
         </div>

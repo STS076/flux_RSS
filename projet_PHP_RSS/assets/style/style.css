@@ -15,3 +15,24 @@
     height: auto;
 }
 
+
+.bouton {
+    background-color: rgb(255, 240, 223);
+}
+
+.navigation {
+    background-color: rgba(128, 128, 128, 0.735);
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
