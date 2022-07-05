@@ -1,5 +1,10 @@
 <?php session_start();
 
+if (!isset($_POST)) {
+    header('Location: erreur404.php');
+    exit();
+};
+
 ?>
 <?php include '../elements/top.php' ?>
 

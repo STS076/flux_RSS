@@ -1,4 +1,4 @@
-<footer class="mt-auto pt-5">
+<footer class="mt-auto pt-4">
     <div class="text-center text-dark mt-auto bg-light  p-2">
         © Mika & Sophie | Mentions légales
     </div>
