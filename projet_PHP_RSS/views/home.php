@@ -75,17 +75,17 @@
             <!-- fetch flux rss -->
 
             <!-- caroussel -->
-            <div id="carouselExampleCaptions" class="carousel slide p-5" data-bs-ride="false">
+            <div id="carouselExampleCaptions" class=" carousel slide mt-4" data-bs-ride="false">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
-                <div class="carousel-inner">
+                <div class="col-lg-10 col-11 carousel-inner">
                     <div class="carousel-item active">
                         <img src="<?= $hiver->enclosure['url'] ?>" class="d-block w-100" alt="image couverture hiver">
                         <div class="carousel-caption d-none d-md-block">
-                            <a href="<?= $hiver->link ?>" class="text-decoration-none text-white blanc fs-4">
+                            <a href="<?= $hiver->link ?>" class="text-decoration-none text-white fs-4">
                                 <p class="card-title blanc"><?= $hiver->title ?> ...voir plus</p>
                             </a>
                         </div>
@@ -93,7 +93,7 @@
                     <div class="carousel-item">
                         <img src="<?= $extreme->enclosure['url'] ?>" class="d-block w-100" alt="image couverture extreme">
                         <div class="carousel-caption d-none d-md-block">
-                            <a href="<?= $extreme->link ?>" class="text-decoration-none text-dark  blanc fs-4">
+                            <a href="<?= $extreme->link ?>" class="text-decoration-none text-dark fs-4">
                                 <p class="card-title blanc"><?= $extreme->title ?> ...voir plus</p>
                             </a>
                         </div>
@@ -101,7 +101,7 @@
                     <div class="carousel-item">
                         <img src="<?= $olympics->enclosure['url'] ?>" class="d-block w-100" alt="image couverture olympiques">
                         <div class="carousel-caption d-none d-md-block">
-                            <a href="<?= $olympics->link ?>" class="text-decoration-none text-dark blanc fs-4">
+                            <a href="<?= $olympics->link ?>" class="text-decoration-none text-white fs-4">
                                 <p class="card-title blanc"><?= $olympics->title ?> ...voir plus</p>
                             </a>
                         </div>
@@ -118,140 +118,126 @@
             </div>
             <!-- caroussel -->
 
-            <?php if (isset($hiver)) {
-                setlocale(LC_TIME, "fr_FR", "fra");
-                $date_format = '%A %d %B %Y';
 
-                for ($index = 0; $index < 4; $index++) { ?>
-                    <div class="card col-lg-4 col-11 p-0 m-5">
-                        <img src="<?= $hiver[$index]->enclosure['url'] ?>" alt="image couverture" class="image">
-                        <div class="card-body">
-                            <a href="<?= $hiver[$index]->link ?>" class="text-decoration-none text-dark">
-                                <p class="card-title"><?= $hiver[$index]->title ?> ...voir plus</p>
-                            </a>
-                            <p><?= strftime($date_format, strtotime($hiver[$index]->pubDate)) ?></p>
-
-
-                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal<?= $index ?>">
-                                info 1
-                            </button>
-
-                        </div>
+            <?php
+            setlocale(LC_TIME, "fr_FR", "fra");
+            $date_format = '%A %d %B %Y';
+            for ($index = 1; $index <= 3; $index++) { ?>
+                <div class="card col-lg-4 col-11 p-0 m-4">
+                    <img src="<?= $hiver[$index]->enclosure['url'] ?>" alt="image couverture" class="image">
+                    <div class="card-body">
+                        <a href="<?= $hiver[$index]->link ?>" class="text-decoration-none text-dark">
+                            <p class="card-title"><?= $hiver[$index]->title ?> ...voir plus</p>
+                        </a>
+                        <p><?= strftime($date_format, strtotime($hiver[$index]->pubDate)) ?></p>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal<?= $index ?>">
+                            info 1
+                        </button>
                     </div>
-                    <!-- modale -->
-                    <div class="modal fade" id="modal<?= $index ?>" tabindex="-1">
-                        <div class=" modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <p class="modal-title">Modal title
-                                    <p>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p class="card-title"><?= $hiver[$index]->title ?></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
+                </div>
+                <!-- modale -->
+                <div class="modal fade" id="modal<?= $index ?>" tabindex="-1">
+                    <div class=" modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="card-title"><?= $hiver[$index]->title ?></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
                             </div>
                         </div>
                     </div>
-                    <!-- modale -->
-
-                <?php } ?>
+                </div>
+                <!-- modale -->
             <?php } ?>
             <!-- fin boucle hiver -->
 
 
-            <?php if (isset($extreme)) {
-                setlocale(LC_TIME, "fr_FR", "fra");
-                $date_format = '%A %d %B %Y';
-                $id = 1;
-                for ($index = 0; $index < 4; $index++) { ?>
-                    <div class="card col-lg-4 col-11 p-0 m-5">
-                        <img src="<?= $extreme[$index]->enclosure['url'] ?>" alt="image couverture" class="image">
-                        <div class="card-body">
-                            <a href="<?= $extreme[$index]->link ?>" class="text-decoration-none text-dark">
-                                <p class="card-title"><?= $extreme[$index]->title ?></p>
-                            </a>
-                            <p><?= strftime($date_format, strtotime($extreme[$index]->pubDate)) ?></p>
+            <?php
+            setlocale(LC_TIME, "fr_FR", "fra");
+            $date_format = '%A %d %B %Y';
 
-                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal<?= $index ?>">
-                                info 2
-                            </button>
+            for ($index2 = 1; $index2 <= 3; $index2++) { ?>
+                <div class="card col-lg-4 col-11 p-0 m-4">
+                    <img src="<?= $extreme[$index2]->enclosure['url'] ?>" alt="image couverture" class="image">
+                    <div class="card-body">
+                        <a href="<?= $extreme[$index2]->link ?>" class="text-decoration-none text-dark">
+                            <p class="card-title"><?= $extreme[$index2]->title ?></p>
+                        </a>
+                        <p><?= strftime($date_format, strtotime($extreme[$index2]->pubDate)) ?></p>
 
-                        </div>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal<?= $index2 ?>">
+                            info 2
+                        </button>
+
                     </div>
+                </div>
 
-                    <!-- modale -->
-                    <div class="modal fade" id="modal<?= $index ?>" tabindex="-1">
-                        <div class=" modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <p class="modal-title">Modal title
-                                    <p>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p class="card-title"><?= $extreme[$index]->title ?></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
+                <!-- modale -->
+                <div class="modal fade" id="modal<?= $index2 ?>" tabindex="-1">
+                    <div class=" modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="card-title"><?= $extreme[$index2]->title ?></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
                             </div>
                         </div>
                     </div>
-                    <!-- modale -->
-
-                <?php } ?>
+                </div>
+                <!-- modale -->
             <?php } ?>
             <!-- fin boucle extrème -->
 
 
-            <?php if (isset($olympics)) {
-                setlocale(LC_TIME, "fr_FR", "fra");
-                $date_format = '%A %d %B %Y';
+            <?php
+            setlocale(LC_TIME, "fr_FR", "fra");
+            $date_format = '%A %d %B %Y';
 
-                for ($index = 0; $index < 4; $index++) { ?>
-                    <div class="card col-lg-4 col-11 p-0 m-5">
-                        <img src="<?= $olympics[$index]->enclosure['url'] ?>" alt="image couverture" class="image">
-                        <div class="card-body">
-                            <a href="<?= $olympics[$index]->link ?>" class="text-decoration-none text-dark">
-                                <p class="card-title"><?= $olympics[$index]->title ?> ...voir plus</p>
-                            </a>
-                            <p><?= strftime($date_format, strtotime($olympics[$index]->pubDate)) ?></p>
-                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal<?= $index ?>">
-                                info 1
-                            </button>
+            for ($index3 = 1; $index3 <= 3; $index3++) { ?>
+                <div class="card col-lg-4 col-11 p-0 m-4">
+                    <img src="<?= $olympics[$index3]->enclosure['url'] ?>" alt="image couverture" class="image">
+                    <div class="card-body">
+                        <a href="<?= $olympics[$index3]->link ?>" class="text-decoration-none text-dark">
+                            <p class="card-title"><?= $olympics[$index3]->title ?> ...voir plus</p>
+                        </a>
+                        <p><?= strftime($date_format, strtotime($olympics[$index3]->pubDate)) ?></p>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal<?= $index3 ?>">
+                            info 3
+                        </button>
 
-                        </div>
                     </div>
-                    <!-- modale -->
-                    <div class="modal fade" id="modal<?= $index ?>" tabindex="-1">
-                        <div class=" modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <p class="modal-title">Modal title
-                                    <p>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p class="card-title"><?= $hiver[$index]->title ?></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
+                </div>
+                <!-- modale -->
+                <div class="modal fade" id="modal<?= $index3 ?>" tabindex="-1">
+                    <div class=" modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="card-title"><?= $olympics->title ?></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
                             </div>
                         </div>
                     </div>
-                    <!-- modale -->
-
-                <?php } ?>
+                </div>
+                <!-- modale -->
             <?php } ?>
-            <!-- fin boucle hiver -->
+
+            <!-- fin boucle olympiques -->
         </div>
         <!-- fin row -->
     </div>
