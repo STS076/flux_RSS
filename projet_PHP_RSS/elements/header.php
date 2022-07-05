@@ -34,7 +34,7 @@
                         <a class="nav-link  fw-bold  active titre me-5" href="settings.php">Fil sport</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  fw-bold  active titre" href="#" tabindex="-1" aria-disabled="true">Résultats</a>
+                        <a class="nav-link  fw-bold  active titre" href="#" tabindex="-1" aria-disabled="true">paramètres</a>
                     </li>
                 </ul>
             </div>
