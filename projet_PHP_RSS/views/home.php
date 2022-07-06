@@ -1,5 +1,5 @@
 <?php session_start();
-require_once '../controllers/home-controller.php'; 
+require_once '../controllers/home-controller.php';
 
 ?>
 <?php include '../elements/top.php' ?>
@@ -8,10 +8,6 @@ require_once '../controllers/home-controller.php';
     <?php include '../elements/header.php' ?>
     <!-- <div class="container"> -->
     <div class="row justify-content-center m-0 p-0">
-
-
-
-
 
         <!-- caroussel -->
         <div class="col-lg-10 col-12 m-0 p-0">
@@ -61,13 +57,12 @@ require_once '../controllers/home-controller.php';
 
 
         <?php
-        if(isset($_COOKIE['myNb'])){
+        if (isset($_COOKIE['myNb'])) {
             $test = ($_COOKIE['myNb'] / 3);
-        }else{
+        } else {
             $test = 3;
         }
-        
-        var_dump($test);
+
         ?>
 
         <?php
@@ -109,18 +104,7 @@ require_once '../controllers/home-controller.php';
 
 
 
-<<<<<<< HEAD
-        <?php
-        if (isset($_COOKIE['myNb'])) {
-            $test = $_COOKIE['myNb'] / 3;
-        } else {
-            $test = 3;
-        }
 
-
-        ?>
-=======
->>>>>>> bd9321805477b414a7203c1fb3d65d2893e05754
 
 
         <!-- fin boucle hiver -->
