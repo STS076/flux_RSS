@@ -19,6 +19,8 @@
             'https://rmcsport.bfmtv.com/rss/sports-d-hiver/'
         ];
 
+
+
         function recupXML($url)
         {
             if (!@$rss = simplexml_load_file($url)) {
@@ -27,7 +29,10 @@
                 return $rss;
             }
         }
+
         $array = [];
+
+
         foreach ($fluxRSS as $value) {
             try {
                 $rss = recupXML($value);
@@ -37,6 +42,12 @@
             }
         }
 
+        if (isset($_COOKIE['choixSport'])) {
+            $arrayChoices = explode("-", $_COOKIE['choixSport']);
+        } else {
+            $arrayChoices = [0, 1, 2];
+        }
+        
 
         ?>
 
@@ -51,26 +62,26 @@
                 </div>
                 <div class="col-lg-8 col-12 carousel-inner">
                     <div class="carousel-item active">
-                        <img src="<?= $array[0]->enclosure['url'] ?>" class="d-block w-100" alt="image couverture olympiques">
+                        <img src="<?= $array[$arrayChoices[0]]->enclosure['url'] ?>" class="d-block w-100" alt="image couverture olympiques">
                         <div class="carousel-caption ">
-                            <a href="<?= $array[0]->link ?>" class="text-decoration-none text-white fs-4">
-                                <p class="card-title "><?= $array[0]->title ?> ...voir plus</p>
+                            <a href="<?= $array[$arrayChoices[0]]->link ?>" class="text-decoration-none text-white fs-4">
+                                <p class="card-title "><?= $array[$arrayChoices[0]]->title ?> ...voir plus</p>
                             </a>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?= $array[1]->enclosure['url'] ?>" class="d-block w-100" alt="image couverture olympiques">
+                        <img src="<?= $array[$arrayChoices[1]]->enclosure['url'] ?>" class="d-block w-100" alt="image couverture olympiques">
                         <div class="carousel-caption ">
-                            <a href="<?= $array[1]->link ?>" class="text-decoration-none text-white fs-4">
-                                <p class="card-title "><?= $array[1]->title ?> ...voir plus</p>
+                            <a href="<?= $array[$arrayChoices[1]]->link ?>" class="text-decoration-none text-white fs-4">
+                                <p class="card-title "><?= $array[$arrayChoices[1]]->title ?> ...voir plus</p>
                             </a>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?= $array[2]->enclosure['url'] ?>" class="d-block w-100" alt="image couverture olympiques">
+                        <img src="<?= $array[$arrayChoices[2]]->enclosure['url'] ?>" class="d-block w-100" alt="image couverture olympiques">
                         <div class="carousel-caption ">
-                            <a href="<?= $array[2]->link ?>" class="text-decoration-none text-white fs-4">
-                                <p class="card-title "><?= $array[2]->title ?> ...voir plus</p>
+                            <a href="<?= $array[$arrayChoices[2]]->link ?>" class="text-decoration-none text-white fs-4">
+                                <p class="card-title "><?= $array[$arrayChoices[2]]->title ?> ...voir plus</p>
                             </a>
                         </div>
                     </div>
@@ -89,13 +100,13 @@
 
 
         <?php
-        if(isset($_COOKIE['myNb'])){
+        if (isset($_COOKIE['myNb'])) {
             $test = ($_COOKIE['myNb'] / 3);
-        }else{
+        } else {
             $test = 3;
         }
-        
-        var_dump($test);
+
+
         ?>
 
         <?php
@@ -103,12 +114,12 @@
         $date_format = '%A %d %B %Y';
         for ($index = 1; $index <= $test; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
-                <img src="<?= $array[0][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
+                <img src="<?= $array[$arrayChoices[0]][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
                 <div class="card-body">
-                    <a href="<?= $array[0][$index]->link ?>" class="text-decoration-none text-dark">
-                        <p class="card-title"><?= $array[0][$index]->title ?> ...voir plus</p>
+                    <a href="<?= $array[$arrayChoices[0]][$index]->link ?>" class="text-decoration-none text-dark">
+                        <p class="card-title"><?= $array[$arrayChoices[0]][$index]->title ?> ...voir plus</p>
                     </a>
-                    <p class="text-dark"><?= strftime($date_format, strtotime($array[0][$index]->pubDate)) ?></p>
+                    <p class="text-dark"><?= strftime($date_format, strtotime($array[$arrayChoices[0]][$index]->pubDate)) ?></p>
                     <button type="button" class="btn bouton" data-bs-toggle="modal" data-bs-target="#modal1<?= $index ?>">
                         <i class="bi text-dark bi-bookmark"></i>
                     </button>
@@ -123,7 +134,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <p class="card-title text-dark"><?= $array[0][$index]->title ?></p>
+                            <p class="card-title text-dark"><?= $array[$arrayChoices[0]][$index]->title ?></p>
                         </div>
                         <div class="modal-footer d-flex justify-content-between">
                             <button type="button" class="btn bouton"><a class="text-dark text-decoration-none" href="<?= $array[0][$index]->link ?>">Article</a></button>
@@ -145,12 +156,12 @@
         $date_format = '%A %d %B %Y';
         for ($index = 1; $index <= $test; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
-                <img src="<?= $array[1][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
+                <img src="<?= $array[$arrayChoices[1]][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
                 <div class="card-body">
-                    <a href="<?= $array[1][$index]->link ?>" class="text-decoration-none text-dark">
-                        <p class="card-title"><?= $array[1][$index]->title ?></p>
+                    <a href="<?= $array[$arrayChoices[1]][$index]->link ?>" class="text-decoration-none text-dark">
+                        <p class="card-title"><?= $array[$arrayChoices[1]][$index]->title ?></p>
                     </a>
-                    <p class="text-dark"><?= strftime($date_format, strtotime($array[1][$index]->pubDate)) ?></p>
+                    <p class="text-dark"><?= strftime($date_format, strtotime($array[$arrayChoices[1]][$index]->pubDate)) ?></p>
                     <button type="button" class="btn bouton" data-bs-toggle="modal" data-bs-target="#modal2<?= $index ?>">
                         <i class="bi text-dark bi-bookmark"></i>
                     </button>
@@ -165,7 +176,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <p class="card-title text-dark"><?= $array[1][$index]->title ?></p>
+                            <p class="card-title text-dark"><?= $array[$arrayChoices[1]][$index]->title ?></p>
                         </div>
                         <div class="modal-footer d-flex justify-content-between">
                             <button type="button" class="btn bouton"><a class="text-dark text-decoration-none" href="<?= $array[1][$index]->link ?>">Article</a></button>
@@ -182,12 +193,12 @@
         $date_format = '%A %d %B %Y';
         for ($index = 1; $index <= $test; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
-                <img src="<?= $array[2][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
+                <img src="<?= $array[$arrayChoices[2]][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
                 <div class="card-body ">
-                    <a href="<?= $array[2][$index]->link ?>" class="text-decoration-none text-dark">
+                    <a href="<?= $array[$arrayChoices[2]][$index]->link ?>" class="text-decoration-none text-dark">
                         <p class="card-title"><?= $array[2][$index]->title ?> ...voir plus</p>
                     </a>
-                    <p class="text-dark"><?= strftime($date_format, strtotime($array[3][$index]->pubDate)) ?></p>
+                    <p class="text-dark"><?= strftime($date_format, strtotime($array[$arrayChoices[2]][$index]->pubDate)) ?></p>
                     <button type="button" class="btn bouton" data-bs-toggle="modal" data-bs-target="#modal3<?= $index ?>">
                         <i class="bi text-dark bi-bookmark"></i>
                     </button>
@@ -202,7 +213,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <p class="card-title text-dark"><?= $array[2][$index]->title ?></p>
+                            <p class="card-title text-dark"><?= $array[$arrayChoices[2]][$index]->title ?></p>
                         </div>
                         <div class="modal-footer d-flex justify-content-between">
                             <button type="button" class="btn bouton"><a class="text-dark text-decoration-none" href="<?= $array[2][$index]->link ?>">Article</a></button>

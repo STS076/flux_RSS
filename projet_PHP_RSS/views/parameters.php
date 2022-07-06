@@ -4,7 +4,6 @@ session_start();
 require_once '../controllers/parameters-controller.php';
 
 require_once '../helpers/helpers.php';
-
 ?>
 
 <?php include '../elements/top.php' ?>
@@ -68,17 +67,20 @@ require_once '../helpers/helpers.php';
                         <label for="cyclisme">Cyclisme</label>
 
                         <input class="myCheckbox" type="checkbox" value="1" name="choice[]" <?= setCheckbox("1", 'choixSport', '') ?>>
-                        <label for="hiver">Sport d'Hivers</label>
+                        <label for="jeux Olympique">Jeux Olympique</label>
 
                         <input class="myCheckbox" type="checkbox" value="2" name="choice[]" <?= setCheckbox("2", 'choixSport', '') ?>>
                         <label for="extreme">Sport Extême</label>
 
 
                         <input class="myCheckbox" type="checkbox" value="3" name="choice[]" <?= setCheckbox("3", 'choixSport', 'checked') ?>>
-                        <label for="olympique">Jeux Olympique</label>
+                        <label for="voile">Voile</label>
 
                         <input class="myCheckbox" type="checkbox" value="4" name="choice[]" <?= setCheckbox("4", 'choixSport', 'checked') ?>>
-                        <label for="Voile">Voile</label>
+                        <label for="sportHiver">Sport d'hiver</label>
+
+
+                        <?php  ?>
 
                     </div>
 
