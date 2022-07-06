@@ -86,10 +86,22 @@
             </div>
         </div>
         <!-- caroussel -->
+
+
+        <?php
+        if(isset($_COOKIE['myNb'])){
+            $test = ($_COOKIE['myNb'] / 3);
+        }else{
+            $test = 3;
+        }
+        
+        var_dump($test);
+        ?>
+
         <?php
         setlocale(LC_TIME, "fr_FR", "fra");
         $date_format = '%A %d %B %Y';
-        for ($index = 1; $index <= 3; $index++) { ?>
+        for ($index = 1; $index <= $test; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $array[0][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
                 <div class="card-body">
@@ -125,15 +137,6 @@
 
 
 
-<?php
-if(isset($_COOKIE['myNb'])){
-    $test = $_COOKIE['myNb'] / 3;
-}else{
-    $test = 3;
-}
-
-
-?>
 
 
         <!-- fin boucle hiver -->
