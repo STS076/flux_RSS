@@ -31,7 +31,7 @@
                     </li>
                   
                     <li class="nav-item">
-                        <a class="nav-link  fw-bold  active titre" href="parameters.php" tabindex="-1" aria-disabled="true">paramètres</a>
+                        <a class="nav-link  fw-bold  active titre" href="parameters.php" tabindex="-1" aria-disabled="true">Paramètres</a>
                     </li>
                 </ul>
             </div>
@@ -52,19 +52,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="">Tour de France</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="pages.php?sport=bike">Tour de France</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Jeux Olympiques</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="pages.php?sport=olympics">Jeux Olympiques</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Sports extrêmes</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="pages.php?sport=extreme">Sports extrêmes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Voile</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="pages.php?sport=sail">Voile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="#">Sports d'hiver</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="pages.php?sport=winter">Sports d'hiver</a>
                     </li>
                 </ul>
 
