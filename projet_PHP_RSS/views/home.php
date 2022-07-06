@@ -1,5 +1,5 @@
 <?php session_start();
-require_once '../controllers/home-controller.php';
+
 
 ?>
 <?php include '../elements/top.php' ?>
@@ -9,7 +9,6 @@ require_once '../controllers/home-controller.php';
     <!-- <div class="container"> -->
     <div class="row justify-content-center m-0 p-0">
 
-<<<<<<< HEAD
 
         <?php
         $fluxRSS = [
@@ -53,8 +52,6 @@ require_once '../controllers/home-controller.php';
         ?>
 
 
-=======
->>>>>>> b0321e6356fbff8207a4ed8a8fcf7fed00f5db01
         <!-- caroussel -->
         <div class="col-lg-10 col-12 m-0 p-0">
             <div id="carouselExampleCaptions" class="container carousel slide mt-4" data-bs-ride="false">
@@ -109,10 +106,7 @@ require_once '../controllers/home-controller.php';
             $test = 3;
         }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b0321e6356fbff8207a4ed8a8fcf7fed00f5db01
         ?>
 
         <?php
@@ -156,7 +150,6 @@ require_once '../controllers/home-controller.php';
 
 
 
-
         <!-- fin boucle hiver -->
         <?php
         setlocale(LC_TIME, "fr_FR", "fra");
@@ -176,7 +169,7 @@ require_once '../controllers/home-controller.php';
             </div>
             <!-- modale -->
             <div class="modal fade" id="modal2<?= $index ?>" tabindex="-1">
-                <div class=" modal-dialog modal-dialog-centered">
+                <div class=" modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <p class=" fw-bold fs-5 text-dark">Toutes les infos sur les sports extrêmes</p>
@@ -213,7 +206,7 @@ require_once '../controllers/home-controller.php';
             </div>
             <!-- modale -->
             <div class="modal fade" id="modal3<?= $index ?>" tabindex="-1">
-                <div class=" modal-dialog modal-dialog-centered">
+                <div class=" modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <p class=" fw-bold fs-5 text-dark">Toutes les infos sur les jeux olympiques</p>

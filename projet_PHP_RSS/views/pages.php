@@ -15,7 +15,7 @@ if (!isset($_GET['sport'])) {
 
     <div class="row justify-content-center m-0 p-0">
         <?php
-
+        $i = 0;
         foreach ($flux as $value) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $value->enclosure['url'] ?>" alt="image couverture" class="image">
@@ -24,13 +24,13 @@ if (!isset($_GET['sport'])) {
                         <p class="card-title"><?= $value->title ?> ...voir plus</p>
                     </a>
                     <p class="text-dark"><?= strftime($date_format, strtotime($value->pubDate)) ?></p>
-                    <button type="button" class="btn bouton" data-bs-toggle="modal" data-bs-target="#modal1<?= $value->title ?>">
+                    <button type="button" class="btn bouton" data-bs-toggle="modal" data-bs-target="#modal1<?= $i ?>">
                         <i class="bi text-dark bi-bookmark"></i>
                     </button>
                 </div>
             </div>
 
-            <div class="modal fade" id="modal1<?= $value->title ?>" tabindex="-1">
+            <div class="modal fade" id="modal1<?= $i ?>" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header text-center">
@@ -47,7 +47,9 @@ if (!isset($_GET['sport'])) {
                     </div>
                 </div>
             </div>
-        <?php } ?>
+        <?php
+            $i++;
+        } ?>
     </div>
 
 
