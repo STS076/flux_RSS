@@ -4,7 +4,6 @@ session_start();
 require_once '../controllers/parameters-controller.php';
 
 require_once '../helpers/helpers.php';
-
 ?>
 
 <?php include '../elements/top.php' ?>
