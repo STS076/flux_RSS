@@ -141,7 +141,7 @@
             </div>
             <!-- modale -->
             <div class="modal fade" id="modal2<?= $index ?>" tabindex="-1">
-                <div class=" modal-dialog">
+                <div class=" modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
                             <p class=" fw-bold fs-5 text-dark">Toutes les infos sur les sports extrêmes</p>
@@ -178,7 +178,7 @@
             </div>
             <!-- modale -->
             <div class="modal fade" id="modal3<?= $index ?>" tabindex="-1">
-                <div class=" modal-dialog">
+                <div class=" modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
                             <p class=" fw-bold fs-5 text-dark">Toutes les infos sur les jeux olympiques</p>

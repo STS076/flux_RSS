@@ -8,6 +8,8 @@ $fluxRSS = [
     'winter' => 'https://rmcsport.bfmtv.com/rss/sports-d-hiver/'
 ];
 
+setlocale(LC_TIME, "fr_FR", "fra");
+$date_format = '%A %d %B %Y';
 
 function recupXML($url)
 {
@@ -19,6 +21,4 @@ function recupXML($url)
 }
 if (isset($_GET['sport'])) {
     $flux = recupXML($fluxRSS[$_GET['sport']]);
-} else {
-    $flux = recupXML($fluxRSS[0]);
-}
+} 

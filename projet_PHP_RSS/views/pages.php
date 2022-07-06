@@ -16,9 +16,6 @@ if (!isset($_GET['sport'])) {
     <div class="row justify-content-center m-0 p-0">
         <?php
 
-        setlocale(LC_TIME, "fr_FR", "fra");
-        $date_format = '%A %d %B %Y';
-
         foreach ($flux as $value) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $value->enclosure['url'] ?>" alt="image couverture" class="image">
