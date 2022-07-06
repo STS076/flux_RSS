@@ -1,9 +1,5 @@
 <?php session_start();
 
-if (!isset($_POST)) {
-    header('Location: erreur404.php');
-    exit();
-};
 
 ?>
 <?php include '../elements/top.php' ?>
@@ -12,15 +8,17 @@ if (!isset($_POST)) {
     <?php include '../elements/header.php' ?>
     <!-- <div class="container"> -->
     <div class="row justify-content-center m-0 p-0">
-        <!-- flux RSS hiver -->
+
+
         <?php
         $fluxRSS = [
-            'https://rmcsport.bfmtv.com/rss/sports-extremes/',
             'https://rmcsport.bfmtv.com/rss/cyclisme/tour-de-france/',
-            'https://rmcsport.bfmtv.com/rss/sports-d-hiver/',
             'https://rmcsport.bfmtv.com/rss/jeux-olympiques/',
-            'https://rmcsport.bfmtv.com/rss/voile/'
+            'https://rmcsport.bfmtv.com/rss/sports-extremes/',
+            'https://rmcsport.bfmtv.com/rss/voile/',
+            'https://rmcsport.bfmtv.com/rss/sports-d-hiver/'
         ];
+
         function recupXML($url)
         {
             if (!@$rss = simplexml_load_file($url)) {
@@ -38,8 +36,11 @@ if (!isset($_POST)) {
                 echo $e->getMessage();
             }
         }
+
+
         ?>
-        <!-- fetch flux rss -->
+
+
         <!-- caroussel -->
         <div class="col-lg-10 col-12 m-0 p-0">
             <div id="carouselExampleCaptions" class="container carousel slide mt-4" data-bs-ride="false">
