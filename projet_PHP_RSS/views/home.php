@@ -58,10 +58,22 @@ require_once '../controllers/home-controller.php';
             </div>
         </div>
         <!-- caroussel -->
+
+
+        <?php
+        if(isset($_COOKIE['myNb'])){
+            $test = ($_COOKIE['myNb'] / 3);
+        }else{
+            $test = 3;
+        }
+        
+        var_dump($test);
+        ?>
+
         <?php
         setlocale(LC_TIME, "fr_FR", "fra");
         $date_format = '%A %d %B %Y';
-        for ($index = 1; $index <= 3; $index++) { ?>
+        for ($index = 1; $index <= $test; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $array[0][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
                 <div class="card-body">
@@ -97,6 +109,7 @@ require_once '../controllers/home-controller.php';
 
 
 
+<<<<<<< HEAD
         <?php
         if (isset($_COOKIE['myNb'])) {
             $test = $_COOKIE['myNb'] / 3;
@@ -106,6 +119,8 @@ require_once '../controllers/home-controller.php';
 
 
         ?>
+=======
+>>>>>>> bd9321805477b414a7203c1fb3d65d2893e05754
 
 
         <!-- fin boucle hiver -->
