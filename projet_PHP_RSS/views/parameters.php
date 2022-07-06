@@ -38,19 +38,19 @@ require_once '../helpers/helpers.php';
 
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" value="cards6" id="nbArticle6" name="myNb" <?= isset($_COOKIE['myNb']) ? ($_COOKIE['myNb'] == 'cards6' ? 'checked' : '') : '' ?>>
+                        <input class="form-check-input" type="radio" value="6" id="nbArticle6" name="myNb" <?= isset($_COOKIE['myNb']) ? ($_COOKIE['myNb'] == '6' ? 'checked' : '') : '' ?>>
                         <label class="form-check-label" for="nbArticle6">
                             nombre d'articles affichés 6
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" value="cards9" id="nbArticle9" name="myNb" <?= isset($_COOKIE['myNb']) ? ($_COOKIE['myNb'] == 'cards9' ? 'checked' : '') : '' ?>>
+                        <input class="form-check-input" type="radio" value="9" id="nbArticle9" name="myNb" <?= isset($_COOKIE['myNb']) ? ($_COOKIE['myNb'] == '9' ? 'checked' : '') : '' ?>>
                         <label class="form-check-label" for="nbArticle9">
                             nombre d'articles affichés 9
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" value="cards12" id="nbArticle12" name="myNb" <?= isset($_COOKIE['myNb']) ? ($_COOKIE['myNb'] == 'cards12' ? 'checked' : '') : '' ?>>
+                        <input class="form-check-input" type="radio" value="12" id="nbArticle12" name="myNb" <?= isset($_COOKIE['myNb']) ? ($_COOKIE['myNb'] == '12' ? 'checked' : '' ) : '' ?>>
                         <label class="form-check-label" for="nbArticle12">
                             nombre d'articles affichés 12
                         </label>

@@ -122,11 +122,25 @@
             </div>
             <!-- modale -->
         <?php } ?>
+
+
+
+<?php
+if(isset($_COOKIE['myNb'])){
+    $test = $_COOKIE['myNb'] / 3;
+}else{
+    $test = 3;
+}
+
+
+?>
+
+
         <!-- fin boucle hiver -->
         <?php
         setlocale(LC_TIME, "fr_FR", "fra");
         $date_format = '%A %d %B %Y';
-        for ($index = 1; $index <= 3; $index++) { ?>
+        for ($index = 1; $index <= $test; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $array[1][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
                 <div class="card-body">
@@ -163,10 +177,10 @@
         <?php
         setlocale(LC_TIME, "fr_FR", "fra");
         $date_format = '%A %d %B %Y';
-        for ($index = 1; $index <= 3; $index++) { ?>
+        for ($index = 1; $index <= $test; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $array[2][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
-                <div class="card-body">
+                <div class="card-body ">
                     <a href="<?= $array[2][$index]->link ?>" class="text-decoration-none text-dark">
                         <p class="card-title"><?= $array[2][$index]->title ?> ...voir plus</p>
                     </a>
