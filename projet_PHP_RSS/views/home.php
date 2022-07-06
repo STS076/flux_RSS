@@ -62,12 +62,9 @@ require_once '../controllers/home-controller.php';
         } else {
             $test = 3;
         }
-
         ?>
 
         <?php
-        setlocale(LC_TIME, "fr_FR", "fra");
-        $date_format = '%A %d %B %Y';
         for ($index = 1; $index <= $test; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $array[0][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
@@ -103,14 +100,8 @@ require_once '../controllers/home-controller.php';
         <?php } ?>
 
 
-
-
-
-
         <!-- fin boucle hiver -->
         <?php
-        setlocale(LC_TIME, "fr_FR", "fra");
-        $date_format = '%A %d %B %Y';
         for ($index = 1; $index <= $test; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $array[1][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
@@ -146,8 +137,6 @@ require_once '../controllers/home-controller.php';
         <?php } ?>
         <!-- fin boucle extrème -->
         <?php
-        setlocale(LC_TIME, "fr_FR", "fra");
-        $date_format = '%A %d %B %Y';
         for ($index = 1; $index <= $test; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $array[2][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
@@ -183,9 +172,7 @@ require_once '../controllers/home-controller.php';
         <?php } ?>
         <!-- fin boucle olympiques -->
     </div>
-    <!-- fin row -->
-    <!-- </div> -->
-    <!-- fin container -->
+
     <?php include '../elements/footer.php' ?>
 </body>
 

@@ -29,7 +29,7 @@
                     <li class="nav-item ">
                         <a href="inscription.php" class="nav-link  fw-bold  active titre me-5">Abonnez-vous</a>
                     </li>
-                  
+
                     <li class="nav-item">
                         <a class="nav-link  fw-bold  active titre" href="parameters.php" tabindex="-1" aria-disabled="true">Paramètres</a>
                     </li>
@@ -106,11 +106,27 @@
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  fw-bold  active titre me-5" href="settings.php">FAvoris</a>
+                        <a class="nav-link  fw-bold  active titre me-5" href="settings.php">Favoris</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="pages.php?sport=bike">Tour de France</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="pages.php?sport=olympics">Jeux Olympiques</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="pages.php?sport=extreme">Sports extrêmes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="pages.php?sport=sail">Voile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-dark" href="pages.php?sport=winter">Sports d'hiver</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link  fw-bold  active titre" href="parameters.php" tabindex="-1" aria-disabled="true">paramètres</a>
                     </li>
+
                 </ul>
             </div>
         </div>

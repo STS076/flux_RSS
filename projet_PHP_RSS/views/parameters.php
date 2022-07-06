@@ -26,67 +26,62 @@ require_once '../helpers/helpers.php';
                     <div class="col-lg-5 col-11">
 
 
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode" <?= isset($_COOKIE['darkMode']) ? 'checked' : '' ?>>
-                        <label class="form-check-label" for="darkMode">Mode dark</label>
-                    </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode" <?= isset($_COOKIE['darkMode']) ? 'checked' : '' ?>>
+                            <label class="form-check-label" for="darkMode">Mode dark</label>
+                        </div>
 
                         <p class="text-center mt-3">Nombre d'articles affichés sur la page d'accueil :</p>
 
 
-                    <p>Nombre d'articles affichés sur la page d'accueil</p>
+                        <p>Nombre d'articles affichés sur la page d'accueil</p>
 
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" value="6" id="nbArticle6" name="myNb" <?= isset($_COOKIE['myNb']) ? ($_COOKIE['myNb'] == '6' ? 'checked' : '') : '' ?>>
-                        <label class="form-check-label" for="nbArticle6">
-                            nombre d'articles affichés 6
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" value="9" id="nbArticle9" name="myNb" <?= isset($_COOKIE['myNb']) ? ($_COOKIE['myNb'] == '9' ? 'checked' : '') : '' ?>>
-                        <label class="form-check-label" for="nbArticle9">
-                            nombre d'articles affichés 9
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" value="12" id="nbArticle12" name="myNb" <?= isset($_COOKIE['myNb']) ? ($_COOKIE['myNb'] == '12' ? 'checked' : '' ) : '' ?>>
-                        <label class="form-check-label" for="nbArticle12">
-                            nombre d'articles affichés 12
-                        </label>
-                    </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="6" id="nbArticle6" name="myNb" <?= isset($_COOKIE['myNb']) ? ($_COOKIE['myNb'] == '6' ? 'checked' : '') : '' ?>>
+                            <label class="form-check-label" for="nbArticle6">
+                                nombre d'articles affichés 6
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="9" id="nbArticle9" name="myNb" <?= isset($_COOKIE['myNb']) ? ($_COOKIE['myNb'] == '9' ? 'checked' : '') : '' ?>>
+                            <label class="form-check-label" for="nbArticle9">
+                                nombre d'articles affichés 9
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="12" id="nbArticle12" name="myNb" <?= isset($_COOKIE['myNb']) ? ($_COOKIE['myNb'] == '12' ? 'checked' : '') : '' ?>>
+                            <label class="form-check-label" for="nbArticle12">
+                                nombre d'articles affichés 12
+                            </label>
+                        </div>
+
+                        <div>
+                            <p>Choississez 3 favoris</p>
+                        </div>
+
+                        <div>
+                            <form action="" method="POST">
+                                <input class="myCheckbox" type="checkbox" value="0" name="choice[]" <?= setCheckbox("0", 'choixSport', 'checked') ?>>
+                                <label for="cyclisme">Cyclisme</label>
+
+                                <input class="myCheckbox" type="checkbox" value="1" name="choice[]" <?= setCheckbox("1", 'choixSport', '') ?>>
+                                <label for="hiver">Sport d'Hivers</label>
+
+                                <input class="myCheckbox" type="checkbox" value="2" name="choice[]" <?= setCheckbox("2", 'choixSport', '') ?>>
+                                <label for="extreme">Sport Extême</label>
 
 
+                                <input class="myCheckbox" type="checkbox" value="3" name="choice[]" <?= setCheckbox("3", 'choixSport', 'checked') ?>>
+                                <label for="olympique">Jeux Olympique</label>
 
-
-                    <div>
-                        <p>Choississez 3 favoris</p>
-                    </div>
-
-                    <div>
-                        <input class="myCheckbox" type="checkbox" value="0" name="choice[]" <?= setCheckbox("0", 'choixSport', 'checked') ?>>
-                        <label for="cyclisme">Cyclisme</label>
-
-                        <input class="myCheckbox" type="checkbox" value="1" name="choice[]" <?= setCheckbox("1", 'choixSport', '') ?>>
-                        <label for="hiver">Sport d'Hivers</label>
-
-                        <input class="myCheckbox" type="checkbox" value="2" name="choice[]" <?= setCheckbox("2", 'choixSport', '') ?>>
-                        <label for="extreme">Sport Extême</label>
-
-
-                        <input class="myCheckbox" type="checkbox" value="3" name="choice[]" <?= setCheckbox("3", 'choixSport', 'checked') ?>>
-                        <label for="olympique">Jeux Olympique</label>
-
-                        <input class="myCheckbox" type="checkbox" value="4" name="choice[]" <?= setCheckbox("4", 'choixSport', 'checked') ?>>
-                        <label for="Voile">Voile</label>
-
-                    </div>
-
+                                <input class="myCheckbox" type="checkbox" value="4" name="choice[]" <?= setCheckbox("4", 'choixSport', 'checked') ?>>
+                                <label for="Voile">Voile</label>
+                            </form>
+                        </div>
                         <div class="d-flex justify-content-center">
                             <button class="my-4 btn bouton">Valider</button>
                         </div>
-
-
                     </div>
                 </div>
             </fieldset>
