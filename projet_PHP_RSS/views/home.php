@@ -1,5 +1,5 @@
 <?php session_start();
-
+require_once '../controllers/home-controller.php'; 
 
 ?>
 <?php include '../elements/top.php' ?>
@@ -10,35 +10,7 @@
     <div class="row justify-content-center m-0 p-0">
 
 
-        <?php
-        $fluxRSS = [
-            'https://rmcsport.bfmtv.com/rss/cyclisme/tour-de-france/',
-            'https://rmcsport.bfmtv.com/rss/jeux-olympiques/',
-            'https://rmcsport.bfmtv.com/rss/sports-extremes/',
-            'https://rmcsport.bfmtv.com/rss/voile/',
-            'https://rmcsport.bfmtv.com/rss/sports-d-hiver/'
-        ];
 
-        function recupXML($url)
-        {
-            if (!@$rss = simplexml_load_file($url)) {
-                throw new Exception('Flux introuvable');
-            } else {
-                return $rss;
-            }
-        }
-        $array = [];
-        foreach ($fluxRSS as $value) {
-            try {
-                $rss = recupXML($value);
-                array_push($array, $rss->channel->item);
-            } catch (Exception $e) {
-                echo $e->getMessage();
-            }
-        }
-
-
-        ?>
 
 
         <!-- caroussel -->
@@ -125,15 +97,15 @@
 
 
 
-<?php
-if(isset($_COOKIE['myNb'])){
-    $test = $_COOKIE['myNb'] / 3;
-}else{
-    $test = 3;
-}
+        <?php
+        if (isset($_COOKIE['myNb'])) {
+            $test = $_COOKIE['myNb'] / 3;
+        } else {
+            $test = 3;
+        }
 
 
-?>
+        ?>
 
 
         <!-- fin boucle hiver -->
