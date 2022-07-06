@@ -20,7 +20,8 @@
         ];
 
 
-
+        setlocale(LC_TIME, "fr_FR", "fra");
+        $date_format = '%A %d %B %Y';
         function recupXML($url)
         {
             if (!@$rss = simplexml_load_file($url)) {
@@ -106,12 +107,13 @@
             $test = 3;
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 59e51a7f80472dcb3206a7d43c14f54b45f4018f
         ?>
 
         <?php
-        setlocale(LC_TIME, "fr_FR", "fra");
-        $date_format = '%A %d %B %Y';
         for ($index = 1; $index <= $test; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $array[$arrayChoices[0]][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
@@ -147,13 +149,14 @@
         <?php } ?>
 
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 59e51a7f80472dcb3206a7d43c14f54b45f4018f
         <!-- fin boucle hiver -->
         <?php
-        setlocale(LC_TIME, "fr_FR", "fra");
-        $date_format = '%A %d %B %Y';
         for ($index = 1; $index <= $test; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $array[$arrayChoices[1]][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
@@ -189,8 +192,6 @@
         <?php } ?>
         <!-- fin boucle extrème -->
         <?php
-        setlocale(LC_TIME, "fr_FR", "fra");
-        $date_format = '%A %d %B %Y';
         for ($index = 1; $index <= $test; $index++) { ?>
             <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
                 <img src="<?= $array[$arrayChoices[2]][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
@@ -226,9 +227,7 @@
         <?php } ?>
         <!-- fin boucle olympiques -->
     </div>
-    <!-- fin row -->
-    <!-- </div> -->
-    <!-- fin container -->
+
     <?php include '../elements/footer.php' ?>
 </body>
 
