@@ -27,7 +27,7 @@ require_once '../helpers/helpers.php';
 
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode" <?= isset($_COOKIE['darkMode']) ? 'checked' : '' ?>>
-                            <label class="form-check-label" for="darkMode">Mode dark</label>
+                            <label class="form-check-label" for="darkMode">Mode Nuit</label>
                         </div>
 
                         <p class="text-center mt-3">Nombre d'articles affichés sur la page d'accueil :</p>

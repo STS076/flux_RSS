@@ -1,5 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.h1css{
+    color: black;
+    font-weight: bold;
+    box-shadow: 5px 5px 15px 0.5;
+}
 .background {
-    background: rgba(0, 0, 0, 0) url("../img/header.jpg");
+    background: rgba(0, 0, 0, 0) url("../img/background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,10 +32,6 @@
     background-color: rgb(255, 240, 223);
 }
 
-.navigation {
-    background-color: rgba(128, 128, 128, 0.735);
-}
-
 .container {
     position: relative;
     text-align: center;
@@ -38,6 +46,16 @@
 
 
 .logocss{
-    height: 5rem;
+    height: 4rem;
     width: auto;
+}
+
+
+.opacitycss{
+    background-color: rgba(37, 35, 35, 0.603);
+    color: rgb(255, 255, 255);
+}
+
+.textcss{
+    color: white;
 }

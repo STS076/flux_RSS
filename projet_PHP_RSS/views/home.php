@@ -107,10 +107,6 @@
             $test = 3;
         }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 59e51a7f80472dcb3206a7d43c14f54b45f4018f
         ?>
 
         <?php
@@ -123,7 +119,7 @@
                     </a>
                     <p class="text-dark"><?= strftime($date_format, strtotime($array[$arrayChoices[0]][$index]->pubDate)) ?></p>
                     <button type="button" class="btn bouton" data-bs-toggle="modal" data-bs-target="#modal1<?= $index ?>">
-                        <i class="bi text-dark bi-bookmark"></i>
+                    <i class="bi bi-zoom-in"></i>
                     </button>
                 </div>
             </div>
@@ -149,12 +145,9 @@
         <?php } ?>
 
 
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 59e51a7f80472dcb3206a7d43c14f54b45f4018f
         <!-- fin boucle hiver -->
         <?php
         for ($index = 1; $index <= $test; $index++) { ?>
@@ -166,7 +159,7 @@
                     </a>
                     <p class="text-dark"><?= strftime($date_format, strtotime($array[$arrayChoices[1]][$index]->pubDate)) ?></p>
                     <button type="button" class="btn bouton" data-bs-toggle="modal" data-bs-target="#modal2<?= $index ?>">
-                        <i class="bi text-dark bi-bookmark"></i>
+                    <i class="bi bi-zoom-in"></i>
                     </button>
                 </div>
             </div>
@@ -201,7 +194,7 @@
                     </a>
                     <p class="text-dark"><?= strftime($date_format, strtotime($array[$arrayChoices[2]][$index]->pubDate)) ?></p>
                     <button type="button" class="btn bouton" data-bs-toggle="modal" data-bs-target="#modal3<?= $index ?>">
-                        <i class="bi text-dark bi-bookmark"></i>
+                    <i class="bi bi-zoom-in"></i>
                     </button>
                 </div>
             </div>

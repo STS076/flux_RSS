@@ -6,6 +6,10 @@ if (!isset($_GET['sport'])) {
     header('Location: 404.php');
     exit();
 }
+
+setlocale(LC_TIME, "fr_FR", "fra");
+$date_format = '%A %d %B %Y';
+
 ?>
 
 <?php include '../elements/top.php' ?>
