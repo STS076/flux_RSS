@@ -111,7 +111,7 @@
 
         <?php
         for ($index = 1; $index <= $test; $index++) { ?>
-            <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
+            <div class="card col-lg-3 col-11 p-0 mt-3 mx-4 shadow-sm p-3 mb-5 bg-body rounded">
                 <img src="<?= $array[$arrayChoices[0]][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
                 <div class="card-body">
                     <a href="<?= $array[$arrayChoices[0]][$index]->link ?>" class="text-decoration-none text-dark">
@@ -151,7 +151,7 @@
         <!-- fin boucle hiver -->
         <?php
         for ($index = 1; $index <= $test; $index++) { ?>
-            <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
+            <div class="card col-lg-3 col-11 p-0 mt-3 mx-4 shadow-sm p-3 mb-5 bg-body rounded">
                 <img src="<?= $array[$arrayChoices[1]][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
                 <div class="card-body">
                     <a href="<?= $array[$arrayChoices[1]][$index]->link ?>" class="text-decoration-none text-dark">
@@ -186,7 +186,7 @@
         <!-- fin boucle extrème -->
         <?php
         for ($index = 1; $index <= $test; $index++) { ?>
-            <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
+            <div class="card col-lg-3 col-11 p-0 mt-3 mx-4 shadow-sm p-3 mb-5 bg-body rounded">
                 <img src="<?= $array[$arrayChoices[2]][$index]->enclosure['url'] ?>" alt="image couverture" class="image">
                 <div class="card-body ">
                     <a href="<?= $array[$arrayChoices[2]][$index]->link ?>" class="text-decoration-none text-dark">

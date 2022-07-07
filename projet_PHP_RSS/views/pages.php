@@ -21,7 +21,7 @@ $date_format = '%A %d %B %Y';
         <?php
         $i = 0;
         foreach ($flux as $value) { ?>
-            <div class="card col-lg-3 col-11 p-0 mt-3 mx-4">
+            <div class="card col-lg-3 col-11 p-0 mt-3 mx-4 shadow-sm p-3 mb-5 bg-body rounded">
                 <img src="<?= $value->enclosure['url'] ?>" alt="image couverture" class="image">
                 <div class="card-body">
                     <a href="<?= $value->link ?>" class="text-decoration-none text-dark">
@@ -29,7 +29,7 @@ $date_format = '%A %d %B %Y';
                     </a>
                     <p class="text-dark"><?= strftime($date_format, strtotime($value->pubDate)) ?></p>
                     <button type="button" class="btn bouton" data-bs-toggle="modal" data-bs-target="#modal1<?= $i ?>">
-                        <i class="bi text-dark bi-bookmark"></i>
+                    <i class="bi bi-zoom-in"></i>
                     </button>
                 </div>
             </div>

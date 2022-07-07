@@ -52,19 +52,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss" href="pages.php?sport=bike">Tour de France</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=bike">Tour de France</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss" href="pages.php?sport=olympics">Jeux Olympiques</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=olympics">Jeux Olympiques</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss" href="pages.php?sport=extreme">Sports extrêmes</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=extreme">Sports extrêmes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss" href="pages.php?sport=sail">Voile</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=sail">Voile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss" href="pages.php?sport=winter">Sports d'hiver</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=winter">Sports d'hiver</a>
                     </li>
                 </ul>
 
@@ -84,17 +84,17 @@
             <div class="collapse navbar-collapse" id="navbarSupported">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item ">
-                        <a href="home.php" class="nav-link  fw-bold  active titre me-5">Accueil</a>
+                        <a href="home.php" class="nav-link  fw-bold  active titre me-5 text-light">Accueil</a>
 
                     </li>
                     <li class="nav-item">
 
                         <?php if (isset($_SESSION['user'])) {  ?>
-                            <a class="nav-link fw-bold active titre me-5 " href="logout.php">
+                            <a class="nav-link fw-bold active titre me-5 text-light" href="logout.php">
                                 Deconnexion
                             </a>
                         <?php } else {  ?>
-                            <a class="nav-link fw-bold active titre me-5 " href="login.php">
+                            <a class="nav-link fw-bold active titre me-5 text-light" href="login.php">
                                 S'indentifier
                             </a>
                         <?php   }
@@ -102,29 +102,38 @@
 
                     </li>
                     <li class="nav-item ">
-                        <a href="inscription.php" class="nav-link  fw-bold  active titre me-5">Abonnez-vous</a>
+                        <a href="inscription.php" class="nav-link  fw-bold  active titre me-5 text-light">Abonnez-vous</a>
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  fw-bold  active titre me-5" href="settings.php">Favoris</a>
+                        <a class="nav-link  fw-bold  active titre me-5 text-light" href="settings.php">Favoris</a>
+                    </li>
+
+                   <?php
+                   if(isset($_POST['choice'])){
+                    
+                   }
+                   ?> 
+
+                    <li class="nav-item">
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-light " href="pages.php?sport=bike">Tour de France</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold " href="pages.php?sport=bike">Tour de France</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=olympics">Jeux Olympiques</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss" href="pages.php?sport=olympics">Jeux Olympiques</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=extreme">Sports extrêmes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss" href="pages.php?sport=extreme">Sports extrêmes</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=sail">Voile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss" href="pages.php?sport=sail">Voile</a>
+                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=winter">Sports d'hiver</a>
                     </li>
+
+
                     <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss" href="pages.php?sport=winter">Sports d'hiver</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  fw-bold  active titre " href="parameters.php" tabindex="-1" aria-disabled="true">paramètres</a>
+                        <a class="nav-link  fw-bold  active titre text-light" href="parameters.php" tabindex="-1" aria-disabled="true">paramètres</a>
                     </li>
 
                 </ul>

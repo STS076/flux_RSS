@@ -61,7 +61,7 @@ require_once '../helpers/helpers.php';
 
                         <div>
                             <form action="" method="POST">
-                                <input class="myCheckbox" type="checkbox" value="0" name="choice[]" <?= setCheckbox("0", 'choixSport', 'checked') ?>>
+                                <input class="myCheckbox" type="checkbox" value="0" name="choice[]"  <?= setCheckbox("0", 'choixSport', 'checked') ?>>
                                 <label for="cyclisme">Cyclisme</label>
 
                                 <input class="myCheckbox" type="checkbox" value="1" name="choice[]" <?= setCheckbox("1", 'choixSport', '') ?>>
