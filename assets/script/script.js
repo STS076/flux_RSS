@@ -1,5 +1,4 @@
-
-  const allCheckbox = document.querySelectorAll(".myCheckbox");
+const allCheckbox = document.querySelectorAll(".myCheckbox");
 
   allCheckbox.forEach((element) => {
     element.addEventListener("change", function () {

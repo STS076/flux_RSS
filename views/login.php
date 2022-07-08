@@ -37,8 +37,6 @@ include '../elements/top.php';
         </div>
     </form>
 
-
-
     <?php include '../elements/footer.php' ?>
 </body>
 

@@ -13,10 +13,11 @@
         <?php
         $fluxRSS = [
             'https://rmcsport.bfmtv.com/rss/cyclisme/tour-de-france/',
-            'https://rmcsport.bfmtv.com/rss/jeux-olympiques/',
+            'https://rmcsport.bfmtv.com/rss/sports-d-hiver/',
             'https://rmcsport.bfmtv.com/rss/sports-extremes/',
+            'https://rmcsport.bfmtv.com/rss/jeux-olympiques/',
             'https://rmcsport.bfmtv.com/rss/voile/',
-            'https://rmcsport.bfmtv.com/rss/sports-d-hiver/'
+            
         ];
 
 

@@ -24,17 +24,14 @@ require_once '../helpers/helpers.php';
 
                     <div class="col-lg-5 col-11">
 
+                        <p class="mt-3 fs-5">Style du site :</p>
 
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode" <?= isset($_COOKIE['darkMode']) ? 'checked' : '' ?>>
                             <label class="form-check-label" for="darkMode">Mode Nuit</label>
                         </div>
 
-                        <p class="text-center mt-3">Nombre d'articles affichés sur la page d'accueil :</p>
-
-
-                        <p>Nombre d'articles affichés sur la page d'accueil</p>
-
+                        <p class="mt-3 fs-5">Nombre d'articles affichés sur la page d'accueil :</p>
 
                         <div class="form-check">
                             <input class="form-check-input" type="radio" value="6" id="nbArticle6" name="myNb" <?= isset($_COOKIE['myNb']) ? ($_COOKIE['myNb'] == '6' ? 'checked' : '') : '' ?>>
@@ -55,27 +52,30 @@ require_once '../helpers/helpers.php';
                             </label>
                         </div>
 
-                        <div>
-                            <p>Choississez 3 favoris</p>
-                        </div>
+                        <p class="mt-3 fs-5">Thématiques (3 obligatoires) :</p>
 
                         <div>
                             <form action="" method="POST">
-                                <input class="myCheckbox" type="checkbox" value="0" name="choice[]"  <?= setCheckbox("0", 'choixSport', 'checked') ?>>
-                                <label for="cyclisme">Cyclisme</label>
-
-                                <input class="myCheckbox" type="checkbox" value="1" name="choice[]" <?= setCheckbox("1", 'choixSport', '') ?>>
-                                <label for="hiver">Sport d'Hivers</label>
-
-                                <input class="myCheckbox" type="checkbox" value="2" name="choice[]" <?= setCheckbox("2", 'choixSport', '') ?>>
-                                <label for="extreme">Sport Extême</label>
-
-
-                                <input class="myCheckbox" type="checkbox" value="3" name="choice[]" <?= setCheckbox("3", 'choixSport', 'checked') ?>>
-                                <label for="olympique">Jeux Olympique</label>
-
-                                <input class="myCheckbox" type="checkbox" value="4" name="choice[]" <?= setCheckbox("4", 'choixSport', 'checked') ?>>
-                                <label for="Voile">Voile</label>
+                                <div>
+                                    <input class="myCheckbox" type="checkbox" value="0" name="choice[]" <?= setCheckbox("0", 'choixSport', 'checked') ?>>
+                                    <label for="cyclisme">Cyclisme</label>
+                                </div>
+                                <div>
+                                    <input class="myCheckbox" type="checkbox" value="1" name="choice[]" <?= setCheckbox("1", 'choixSport', 'checked') ?>>
+                                    <label for="hiver">Sport d'Hivers</label>
+                                </div>
+                                <div>
+                                    <input class="myCheckbox" type="checkbox" value="2" name="choice[]" <?= setCheckbox("2", 'choixSport', 'checked') ?>>
+                                    <label for="extreme">Sport Extême</label>
+                                </div>
+                                <div>
+                                    <input class="myCheckbox" type="checkbox" value="3" name="choice[]" <?= setCheckbox("3", 'choixSport', '') ?>>
+                                    <label for="olympique">Jeux Olympique</label>
+                                </div>
+                                <div>
+                                    <input class="myCheckbox" type="checkbox" value="4" name="choice[]" <?= setCheckbox("4", 'choixSport', '') ?>>
+                                    <label for="Voile">Voile</label>
+                                </div>
                             </form>
                         </div>
                         <div class="d-flex justify-content-center">
@@ -87,13 +87,6 @@ require_once '../helpers/helpers.php';
         </div>
     </form>
 
-
-
-
-
-
-
-    <script src="../assets/script/script.js"></script>
     <?php include '../elements/footer.php' ?>
 
 </body>

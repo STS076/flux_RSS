@@ -97,8 +97,6 @@ require_once '../controllers/inscription-controller.php';
 
     <?php } ?>
 
-
-
     <?php include '../elements/footer.php' ?>
 
 </body>

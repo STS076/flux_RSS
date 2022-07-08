@@ -56,7 +56,6 @@ $date_format = '%A %d %B %Y';
         } ?>
     </div>
 
-
     <?php include '../elements/footer.php' ?>
 </body>
 

@@ -8,10 +8,6 @@ $fluxRSS = [
     'winter' => 'https://rmcsport.bfmtv.com/rss/sports-d-hiver/'
 ];
 
-
-
-
-
 function recupXML($url)
 {
     if (!@$rss = simplexml_load_file($url)) {
@@ -20,6 +16,7 @@ function recupXML($url)
         return $rss->channel->item;
     }
 }
+
 if (isset($_GET['sport'])) {
     $flux = recupXML($fluxRSS[$_GET['sport']]);
 } else {

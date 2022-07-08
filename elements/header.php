@@ -1,8 +1,32 @@
+<?php
+// Personnalisation de la navBarre 
+
+$themeArray = [
+    'bike',
+    'winter',
+    'extreme',
+    'olympics',
+    'sail'
+];
+
+$themeName = [
+    'Tour de France',
+    'Sports d\'hiver',
+    'Sports extrêmes',
+    'Jeux Olympiques',
+    'Voile'    
+];
+
+if ($_COOKIE['choixSport']) {
+    $choixSport = explode('-', $_COOKIE['choixSport']);
+}
+
+?>
 <header class="background d-lg-block d-none">
 
     <nav class="navbar navbar-expand-lg shadow-5-strong mb-4 pb-4">
         <div class="container-fluid">
-        <a class="navbar-brand me-5 pe-5" href="home.php"><img class="logocss" src="../assets/img/logosport.png" alt=""></a>
+            <a class="navbar-brand me-5 pe-5" href="home.php"><img class="logocss" src="../assets/img/logosport.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupported" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,7 +63,7 @@
     </nav>
 
     <div class="pb-4">
-        <h1 class="text-center py-4 h1css ">Le Recap'Sport <img class="logocss" src="../assets/img/logosport.png" alt=""></h1>
+        <h1 class="text-center py-4 h1css ">Le Recap'Sport <img class="logocss" src="../assets/img/logosport.png" alt="Image du Logo du Site"></h1>
     </div>
 
     <nav class="navbar navbar-expand-lg shadow-5-strong recherche p-4 mt-4 opacitycss">
@@ -51,21 +75,31 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=bike">Tour de France</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=olympics">Jeux Olympiques</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=extreme">Sports extrêmes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=sail">Voile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=winter">Sports d'hiver</a>
-                    </li>
+
+                    <?php
+                    if (isset($_COOKIE['choixSport'])) {
+                        foreach ($choixSport as $key => $value) { ?>
+
+                            <li class="nav-item">
+                                <a class="nav-link active titre box mx-3 px-4 fw-bold text-light " href="pages.php?sport=<?= $themeArray[$value] ?>"><?= $themeName[$value] ?></a>
+                            </li>
+
+                        <?php  }
+                    } else { ?>
+
+                        <!-- Paramètres par défaut -->
+                        <li class="nav-item">
+                            <a class="nav-link active titre box mx-3 px-4 fw-bold text-light " href="pages.php?sport=bike">Tour de France</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=olympics">Jeux Olympiques</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=extreme">Sports extrêmes</a>
+                        </li>
+
+                    <?php } ?>
+
                 </ul>
 
             </div>
@@ -109,28 +143,29 @@
                         <a class="nav-link  fw-bold  active titre me-5 text-light" href="settings.php">Favoris</a>
                     </li>
 
-                   <?php
-                   if(isset($_POST['choice'])){
-                    
-                   }
-                   ?> 
+                    <?php
+                    if (isset($_COOKIE['choixSport'])) {
+                        foreach ($choixSport as $key => $value) { ?>
 
-                    <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold text-light " href="pages.php?sport=bike">Tour de France</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=olympics">Jeux Olympiques</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=extreme">Sports extrêmes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=sail">Voile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=winter">Sports d'hiver</a>
-                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link active titre box mx-3 px-4 fw-bold text-light " href="pages.php?sport=<?= $themeArray[$value] ?>"><?= $themeName[$value] ?></a>
+                            </li>
 
+                        <?php  }
+                    } else { ?>
+
+                        <!-- Paramètres par défaut -->
+                        <li class="nav-item">
+                            <a class="nav-link active titre box mx-3 px-4 fw-bold text-light " href="pages.php?sport=bike">Tour de France</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=olympics">Jeux Olympiques</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active titre box mx-3 px-4 fw-bold textcss text-light" href="pages.php?sport=extreme">Sports extrêmes</a>
+                        </li>
+
+                    <?php } ?>
 
                     <li class="nav-item">
                         <a class="nav-link  fw-bold  active titre text-light" href="parameters.php" tabindex="-1" aria-disabled="true">paramètres</a>
