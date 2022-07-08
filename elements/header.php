@@ -14,10 +14,10 @@ $themeName = [
     'Sports d\'hiver',
     'Sports extrêmes',
     'Jeux Olympiques',
-    'Voile'    
+    'Voile'
 ];
 
-if ($_COOKIE['choixSport']) {
+if (isset($_COOKIE['choixSport'])) {
     $choixSport = explode('-', $_COOKIE['choixSport']);
 }
 
